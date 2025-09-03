@@ -6,7 +6,7 @@ from pydicom import dcmread
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("path", help="Path to DICOM file")
-    p. add_argument("--peer", default="127.0.0.1")
+    p.add_argument("--peer", default="127.0.0.1")
     p.add_argument("--port", type=int, default=4242)
     p.add_argument("--called-aet", default="ORTHANC")
     p.add_argument("--calling-aet", default="PYNETDICOM")
