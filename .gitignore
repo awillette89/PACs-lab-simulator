@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Data/Runtime
+data/inbox/
+inbox/
+*.dcm
+*.log
+
+# Editors/OS
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
