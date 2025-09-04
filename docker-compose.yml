@@ -3,21 +3,22 @@ services:
   orthanc:
     image: orthancteam/orthanc:latest
     container_name: pacs-orthanc
+    restart: unless-stopped
     ports:
-      - "8042:8042" # HTTP UI + REST/DICOMweb
-      - "4242:4242" # DICOM DIMSE
+      - "8042:8042"   # HTTP UI
+      - "4242:4242"   # DICOM DIMSE
     environment:
       ORTHANC__NAME: "pacs-lab"
-      ORTHANC__REGISTERED_USERS: |
-        {"orthanc":"orthanc"}
-      VERBOSE_STARTUP: "true"
-      DICOM_WEB_PLUGIN_ENABLED: "true"
-      WORKLISTS_PLUGIN_ENABLED: "true"
-      ORTHANC_EXPLORER_2_ENABLED: "true"
+      ORTHANC__REGISTERED_USERS: '{"orthanc":"orthanc"}'
+      ORTHANC__DICOM_WEB__ENABLE: "true"
+      ORTHANC__ORTHANC_EXPLORER_2__ENABLE: "true"
+      ORTHANC__WORKLISTS__ENABLE: "true"
+      ORTHANC__WORKLISTS__DATABASE: "/var/lib/orthanc/worklists"
+      ORTHANC__DICOM_MODALITIES: '{"PYMOD1":["PYMOD1","*",11112]}'
       OHIF_PLUGIN_ENABLED: "true"
     volumes:
       - orthanc-db:/var/lib/orthanc/db
-      - orthanc-worklists:/var/lib/orthanc/worklists
+      - ./worklists:/var/lib/orthanc/worklists
+
 volumes:
   orthanc-db:
-  orthanc-worklists:
