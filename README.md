@@ -181,7 +181,7 @@ Re-run: `python src/dimse/find_mwl_verbose.py` (expect `Status: 0xff00` then `Ma
 
 ---
 
-## What this demonstrates (resume bullets)
+## What this demonstrates 
 
 - Containerized **PACS** with **DICOMweb** + **Worklists**  
 - DIMSE clients/servers: **C-FIND (MWL)**, **C-STORE**, echo/register admin  
