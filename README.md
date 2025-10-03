@@ -35,7 +35,7 @@ docker compose up -d
 python src/demo.py
 
 # 3) Open PACS UI (login: orthanc / orthanc)
-# http://localhost:8042/ui/
+# http://localhost:8042/
 ```
 
 You’ll see a study for **PID `P12345`** with **Accession `ACC1001`**, modality **CT**, description **CT CHEST W CONTRAST**.
